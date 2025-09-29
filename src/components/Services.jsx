@@ -45,37 +45,66 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-16 bg-white">
+    <section id="services" className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Наши услуги
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+            ⚖️ Наши услуги
           </h2>
-          <p className="mt-4 text-xl text-gray-600">
-            Комплексная юридическая поддержка для военнослужащих
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Комплексная юридическая поддержка для военнослужащих с гарантией результата
           </p>
         </div>
 
-        <div className="mt-12">
+        <div className="mt-16">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => (
-              <div key={service.id} className="relative group">
-                <div className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-primary-600 hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex items-center mb-4">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary-500 text-white">
+            {services.map((service, index) => (
+              <div 
+                key={service.id} 
+                className="relative group"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <div className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group-hover:scale-105">
+                  {/* Gradient background on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Content */}
+                  <div className="relative p-8 z-10">
+                    {/* Number badge */}
+                    <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-xl font-black text-white">{service.id}</span>
+                    </div>
+
+                    {/* Icon */}
+                    <div className="flex items-center justify-center h-16 w-16 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 text-white mb-6 group-hover:bg-white/20 transition-all duration-300">
                       {service.icon}
                     </div>
-                    <div className="ml-4">
-                      <span className="text-3xl font-bold text-primary-600">{service.id}</span>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-white transition-colors duration-300">
+                      {service.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-600 group-hover:text-blue-100 transition-colors duration-300 leading-relaxed">
+                      {service.description}
+                    </p>
+
+                    {/* Action button */}
+                    <div className="mt-6">
+                      <button className="w-full bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold opacity-0 group-hover:opacity-100 group-hover:bg-white group-hover:text-blue-600 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        Подробнее
+                      </button>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600">
-                    {service.description}
-                  </p>
+
+                  {/* Decorative elements */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 </div>
+
+                {/* Floating effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-600/10 to-purple-600/10 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 -z-10"></div>
               </div>
             ))}
           </div>
