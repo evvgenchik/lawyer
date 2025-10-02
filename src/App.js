@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import Services from './components/Services.jsx';
@@ -11,20 +10,20 @@ import Footer from './components/Footer.jsx';
 import ChatWidget from './components/ChatWidget.jsx';
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <Stats />
-      <Services />
-      <Testimonials />
-      <Team />
-      <FAQ />
-      <ConsultationForm />
-      <Footer />
-      <ChatWidget />
-    </div>
-  );
+    return (
+        <div className="App">
+            <Header />
+            <Hero />
+            <Stats />
+            <Services />
+            <Testimonials />
+            <Team />
+            <FAQ />
+            <ConsultationForm />
+            <Footer />
+            <ChatWidget />
+        </div>
+    );
 }
 
 export default App;
