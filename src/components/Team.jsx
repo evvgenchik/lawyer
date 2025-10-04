@@ -4,20 +4,26 @@ const Team = () => {
             name: 'Коротеев Владислав Олегович',
             education: 'Учился в Саратовской государственной юридической академии (Институт прокуратуры РФ)',
             specialization: 'Военное право, страховые выплаты',
-            image: 'https://via.placeholder.com/300x300/3B82F6/FFFFFF?text=В.О.'
-        },
-        {
-            name: 'Двуреченский Леонид Андреевич',
-            education: 'Учился в РАНХиГС в Липецком филиале. ЛГТУ магистр юриспруденция. Уголовно-правовой профиль',
-            specialization: 'Уголовное право, защита прав военнослужащих',
-            image: 'https://via.placeholder.com/300x300/3B82F6/FFFFFF?text=Л.А.'
-        },
-        {
-            name: 'Ворошилина Алина Игоревна',
-            education: 'Окончила ФГБОУ ВО Елецкий государственный университет имени И. А. Бунина с отличием, магистр юриспруденции',
-            specialization: 'Гражданское право, семейное право',
-            image: 'https://via.placeholder.com/300x300/3B82F6/FFFFFF?text=А.И.'
+            image: '/images/vladik.webp'
         }
+        // {
+        //     name: 'Коротеев Владислав Олегович',
+        //     education: 'Учился в Саратовской государственной юридической академии (Институт прокуратуры РФ)',
+        //     specialization: 'Военное право, страховые выплаты',
+        //     image: 'https://via.placeholder.com/300x300/3B82F6/FFFFFF?text=В.О.'
+        // }
+        // {
+        //     name: 'Двуреченский Леонид Андреевич',
+        //     education: 'Учился в РАНХиГС в Липецком филиале. ЛГТУ магистр юриспруденция. Уголовно-правовой профиль',
+        //     specialization: 'Уголовное право, защита прав военнослужащих',
+        //     image: 'https://via.placeholder.com/300x300/3B82F6/FFFFFF?text=Л.А.'
+        // },
+        // {
+        //     name: 'Ворошилина Алина Игоревна',
+        //     education: 'Окончила ФГБОУ ВО Елецкий государственный университет имени И. А. Бунина с отличием, магистр юриспруденции',
+        //     specialization: 'Гражданское право, семейное право',
+        //     image: 'https://via.placeholder.com/300x300/3B82F6/FFFFFF?text=А.И.'
+        // }
     ];
 
     return (
@@ -33,7 +39,8 @@ const Team = () => {
                 </div>
 
                 <div className="mt-12">
-                    <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+                    {/* <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3"> */}
+                    <div className="flex justify-center">
                         {teamMembers.map((member, index) => (
                             <div key={index} className="text-center">
                                 <div className="space-y-4">

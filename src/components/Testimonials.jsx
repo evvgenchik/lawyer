@@ -9,7 +9,7 @@ const Testimonials = () => {
             role: 'Участник СВО',
             text: 'Благодаря юристам получил страховые выплаты в полном объеме. Процесс занял всего 2 месяца, хотя изначально мне отказали.',
             amount: '2,1 млн ₽',
-            image: 'https://via.placeholder.com/80x80/3B82F6/FFFFFF?text=СМ',
+            //image: 'https://via.placeholder.com/80x80/3B82F6/FFFFFF?text=СМ',
             rating: 5
         },
         {
@@ -17,7 +17,7 @@ const Testimonials = () => {
             role: 'Мобилизованный',
             text: 'Помогли вернуться домой к семье. Профессиональный подход, все документы подготовили грамотно.',
             amount: 'Возвращение домой',
-            image: 'https://via.placeholder.com/80x80/3B82F6/FFFFFF?text=АП',
+            //image: 'https://via.placeholder.com/80x80/3B82F6/FFFFFF?text=АП',
             rating: 5
         },
         {
@@ -25,7 +25,7 @@ const Testimonials = () => {
             role: 'Доброволец',
             text: 'Отличные специалисты! Получил все положенные льготы и выплаты. Рекомендую всем военнослужащим.',
             amount: '1,8 млн ₽',
-            image: 'https://via.placeholder.com/80x80/3B82F6/FFFFFF?text=ДА',
+            //image: 'https://via.placeholder.com/80x80/3B82F6/FFFFFF?text=ДА',
             rating: 5
         }
     ];
@@ -74,11 +74,11 @@ const Testimonials = () => {
 
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center">
-                                            <img
+                                            {/* <img
                                                 src={testimonial.image}
                                                 alt={testimonial.name}
                                                 className="w-12 h-12 rounded-full mr-4 border-2 border-white shadow-lg"
-                                            />
+                                            /> */}
                                             <div>
                                                 <cite className="font-semibold text-gray-900 not-italic">
                                                     {testimonial.name}
