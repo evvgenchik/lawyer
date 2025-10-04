@@ -145,7 +145,7 @@ const ConsultationForm = () => {
                                 </div>
                                 <div className="ml-4">
                                     <h3 className="text-lg font-medium text-white">Позвоните нам по телефону:</h3>
-                                    <a href="tel:+74742200719" className="text-2xl font-bold text-primary-200 hover:text-white">
+                                    <a href="tel:+74742200719" className="text-2xl font-bold text-green-500 hover:text-white">
                                         +7 (474) 220-07-19
                                     </a>
                                 </div>

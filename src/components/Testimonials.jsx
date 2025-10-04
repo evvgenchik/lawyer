@@ -54,7 +54,7 @@ const Testimonials = () => {
                                 }`}
                                 onClick={() => setActiveTestimonial(index)}
                             >
-                                <div className={`relative backdrop-blur-sm rounded-2xl p-8 border-2 transition-all duration-300 ${
+                                <div className={`relative backdrop-blur-sm rounded-2xl p-8 border-2 transition-all duration-300 flex flex-col h-full ${
                                     activeTestimonial === index
                                         ? 'bg-white/90 border-blue-500 shadow-2xl shadow-blue-500/20'
                                         : 'bg-white/70 border-white/50 shadow-lg hover:shadow-xl'
@@ -68,7 +68,7 @@ const Testimonials = () => {
                                         ))}
                                     </div>
 
-                                    <blockquote className="text-gray-700 mb-6 italic text-lg leading-relaxed">
+                                    <blockquote className="text-gray-700 mb-6 italic text-lg leading-relaxed flex-grow">
                                         "{testimonial.text}"
                                     </blockquote>
 

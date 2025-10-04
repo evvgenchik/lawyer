@@ -80,7 +80,7 @@ const Footer = () => {
                 <div className="mt-8 border-t border-gray-700 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <div className="text-gray-400 text-sm">
-                            <p>ИП Олимпиев Евгений Алексеевич</p>
+                            <p>ИП Коротеев Владислав Олегович</p>
                             <p>ИНН 482560079908 | ОГРНИП: 325480000000123</p>
                         </div>
                     </div>

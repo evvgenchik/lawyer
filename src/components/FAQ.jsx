@@ -1,7 +1,7 @@
 import{ useState } from 'react';
 
 const FAQ = () => {
-    const [activeQuestion, setActiveQuestion] = useState(0);
+    const [activeQuestions, setActiveQuestions] = useState([]);
 
     const faqs = [
         {
@@ -52,43 +52,49 @@ const FAQ = () => {
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className={`group border-2 rounded-2xl transition-all duration-300 overflow-hidden ${
-                                activeQuestion === index
+                            className={`group border-2 rounded-2xl transition-all duration-500 ease-in-out overflow-hidden ${
+                                activeQuestions.includes(index)
                                     ? 'border-blue-500 bg-blue-50 shadow-lg'
                                     : 'border-gray-200 hover:border-gray-300 bg-white hover:shadow-md'
                             }`}
                         >
                             <button
                                 className="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none"
-                                onClick={() => setActiveQuestion(activeQuestion === index ? -1 : index)}
+                                onClick={() => {
+                                    setActiveQuestions(prev =>
+                                        prev.includes(index)
+                                            ? prev.filter(i => i !== index)
+                                            : [...prev, index]
+                                    );
+                                }}
                             >
                                 <div className="flex items-center">
                                     <span className="text-2xl mr-4">{faq.icon}</span>
-                                    <span className={`text-lg font-semibold transition-colors duration-300 ${
-                                        activeQuestion === index ? 'text-blue-700' : 'text-gray-900'
+                                    <span className={`text-lg font-semibold transition-colors duration-500 ease-in-out ${
+                                        activeQuestions.includes(index) ? 'text-blue-700' : 'text-gray-900'
                                     }`}>
                                         {faq.question}
                                     </span>
                                 </div>
-                                <div className={`transition-transform duration-300 ${
-                                    activeQuestion === index ? 'rotate-180' : 'rotate-0'
+                                <div className={`transition-transform duration-500 ease-in-out ${
+                                    activeQuestions.includes(index) ? 'rotate-180' : 'rotate-0'
                                 }`}>
                                     <svg className={`w-6 h-6 ${
-                                        activeQuestion === index ? 'text-blue-500' : 'text-gray-400'
+                                        activeQuestions.includes(index) ? 'text-blue-500' : 'text-gray-400'
                                     }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                                     </svg>
                                 </div>
                             </button>
 
-                            <div className={`transition-all duration-300 overflow-hidden ${
-                                activeQuestion === index
-                                    ? 'max-h-96 opacity-100'
-                                    : 'max-h-0 opacity-0'
+                            <div className={`transition-all duration-700 ease-out overflow-hidden ${
+                                activeQuestions.includes(index)
+                                    ? 'max-h-96 opacity-100 transform translate-y-0'
+                                    : 'max-h-0 opacity-0 transform -translate-y-2'
                             }`}>
                                 <div className="px-6 pb-5">
                                     <div className={`pl-12 text-gray-700 leading-relaxed ${
-                                        activeQuestion === index ? 'animate-fadeIn' : ''
+                                        activeQuestions.includes(index) ? 'animate-fadeIn' : ''
                                     }`}>
                                         {faq.answer}
                                     </div>

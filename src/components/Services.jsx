@@ -62,12 +62,12 @@ const Services = () => {
                                 className="relative group"
                                 style={{ animationDelay: `${index * 150}ms` }}
                             >
-                                <div className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group-hover:scale-105">
+                                <div className="relative overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 group-hover:scale-105 h-full">
                                     {/* Gradient background on hover */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                                     {/* Content */}
-                                    <div className="relative p-8 z-10">
+                                    <div className="relative p-8 z-10 flex flex-col h-full">
                                         {/* Number badge */}
                                         <div className="absolute top-2 right-2 w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
                                             <span className="text-xl font-black text-white">{service.id}</span>
@@ -84,7 +84,7 @@ const Services = () => {
                                         </h3>
 
                                         {/* Description */}
-                                        <p className="text-gray-600 group-hover:text-blue-100 transition-colors duration-300 leading-relaxed">
+                                        <p className="text-gray-600 group-hover:text-blue-100 transition-colors duration-300 leading-relaxed flex-grow">
                                             {service.description}
                                         </p>
 
