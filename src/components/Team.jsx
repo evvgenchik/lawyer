@@ -2,9 +2,9 @@ const Team = () => {
     const teamMembers = [
         {
             name: 'Коротеев Владислав Олегович',
-            education: 'Учился в Саратовской государственной юридической академии (Институт прокуратуры РФ)',
-            specialization: 'Военное право, страховые выплаты',
-            image: '/images/vladik.webp'
+            education: 'По жизни здравый пацан, юрист по образованию',
+            specialization: 'Самый большой начальник в этой фирме',
+            image: '/images/vladik2.PNG'
         }
         // {
         //     name: 'Коротеев Владислав Олегович',
@@ -44,7 +44,7 @@ const Team = () => {
                         {teamMembers.map((member, index) => (
                             <div key={index} className="text-center">
                                 <div className="space-y-4">
-                                    <img className="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 object-cover" src={member.image} alt={member.name} />
+                                    <img className="mx-auto h-80 w-80 rounded-full xl:w-56 xl:h-56 object-fill" src={member.image} alt={member.name} />
                                     <div className="space-y-2">
                                         <div className="text-lg leading-6 font-medium space-y-1">
                                             <h3 className="text-gray-900 text-xl font-bold">{member.name}</h3>
