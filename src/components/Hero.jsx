@@ -1,8 +1,21 @@
 import { useState, useEffect } from 'react';
 
+import { supabase } from '../supabaseClient';
+
 const Hero = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [activeFeature, setActiveFeature] = useState(0);
+
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        message: '',
+        agreement: false
+    });
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState('');
 
     useEffect(() => {
         setIsVisible(true);
@@ -11,6 +24,116 @@ const Hero = () => {
         }, 3000);
         return () => clearInterval(interval);
     }, []);
+
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: type === 'checkbox' ? checked : value
+        }));
+    };
+
+    const handlePhoneFocus = () => {
+        if (!formData.phone) {
+            setFormData(prev => ({
+                ...prev,
+                phone: '+7'
+            }));
+        }
+    };
+
+    const handlePhoneChange = (e) => {
+        let value = e.target.value;
+
+        // Ensure +7 prefix is always there
+        if (!value.startsWith('+7')) {
+            value = '+7' + value.replace(/^\+7/, '');
+        }
+
+        // Remove all non-digit characters except +
+        const digitsOnly = value.replace(/[^\d+]/g, '');
+
+        // Format as +7 (XXX) XXX-XX-XX
+        if (digitsOnly.length >= 2) {
+            let formatted = '+7';
+            if (digitsOnly.length > 2) {
+                formatted += ' (' + digitsOnly.substring(2, Math.min(5, digitsOnly.length));
+            }
+            if (digitsOnly.length >= 6) {
+                formatted += ') ' + digitsOnly.substring(5, Math.min(8, digitsOnly.length));
+            }
+            if (digitsOnly.length >= 9) {
+                formatted += '-' + digitsOnly.substring(8, Math.min(10, digitsOnly.length));
+            }
+            if (digitsOnly.length >= 11) {
+                formatted += '-' + digitsOnly.substring(10, Math.min(12, digitsOnly.length));
+            }
+            value = formatted;
+        }
+
+        setFormData(prev => ({
+            ...prev,
+            phone: value
+        }));
+    };
+
+    const validatePhone = (phone) => {
+        // Remove formatting for validation
+        const cleanPhone = phone.replace(/[^\d]/g, '');
+        // Check if it's +7 followed by 10 digits
+        return cleanPhone.length === 11 && cleanPhone.startsWith('7');
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Validate phone number
+        if (!validatePhone(formData.phone)) {
+            setError('Пожалуйста, введите корректный номер телефона в формате +7 (XXX) XXX-XX-XX');
+            return;
+        }
+
+        setLoading(true);
+        setError('');
+        setSuccess(false);
+
+        try {
+            const { error } = await supabase
+                .from('consultations')
+                .insert([
+                    {
+                        name: formData.name,
+                        phone: formData.phone,
+                        email: formData.email || null,
+                        message: formData.message || null,
+                        status: 'new',
+                        service_type: 'Общая консультация'
+                    }
+                ]);
+
+            if (error) throw error;
+
+            console.log(error);
+            
+
+            setSuccess(true);
+            setFormData({
+                name: '',
+                phone: '',
+                email: '',
+                message: '',
+                agreement: false
+            });
+
+            // Hide success message after 5 seconds
+            setTimeout(() => setSuccess(false), 5000);
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setError('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже.');
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
@@ -99,18 +222,50 @@ const Hero = () => {
                                     <h3 className="text-2xl font-bold text-white mb-2">� Бесплатная консультация</h3>
                                     <p className="text-blue-200 mb-6">Получите профессиональную помощь уже сегодня</p>
 
-                                    <form className="space-y-5">
+                                    {success && (
+                                        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                                            <div className="flex items-center">
+                                                <svg className="h-5 w-5 text-green-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                <p className="text-sm text-green-800">
+                                                    Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {error && (
+                                        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                                            <div className="flex items-center">
+                                                <svg className="h-5 w-5 text-red-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                <p className="text-sm text-red-800">{error}</p>
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    <form onSubmit={handleSubmit} className="space-y-5">
                                         <div className="relative">
                                             <input
                                                 type="text"
+                                                required
                                                 placeholder="Ваше имя"
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                name="name"
                                                 className="w-full px-4 py-4 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300"
                                             />
                                         </div>
                                         <div className="relative">
                                             <input
                                                 type="tel"
+                                                required
                                                 placeholder="Номер телефона"
+                                                value={formData.phone}
+                                                onChange={handlePhoneChange}
+                                                onFocus={handlePhoneFocus}
                                                 className="w-full px-4 py-4 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300"
                                             />
                                         </div>
@@ -118,6 +273,9 @@ const Hero = () => {
                                             <textarea
                                                 placeholder="Опишите вашу ситуацию"
                                                 rows="3"
+                                                value={formData.message}
+                                                onChange={handleChange}
+                                                name="message"
                                                 className="w-full px-4 py-4 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all duration-300"
                                             ></textarea>
                                         </div>
@@ -125,20 +283,35 @@ const Hero = () => {
                                             <div className="flex items-center h-5 mt-1">
                                                 <input
                                                     type="checkbox"
-                                                    className="focus:ring-yellow-400 h-4 w-4 text-yellow-400 bg-white/20 border-white/30 rounded"
+                                                    required
+                                                    checked={formData.agreement}
+                                                    onChange={handleChange}
+                                                    name="agreement"
+                                                    className="focus:ring-yellow-400 h-4 w-4 text-yellow-400 bg-white/20 border-white/30 rounded cursor-pointer"
                                                 />
                                             </div>
                                             <div className="ml-3 text-sm">
-                                                <span className="text-blue-200">
+                                                <label htmlFor="agreement"  className="text-blue-200">
                                                     Согласен на обработку <a href="/privacy" className="text-yellow-300 underline hover:text-yellow-200">персональных данных</a>
-                                                </span>
+                                                </label>
                                             </div>
                                         </div>
                                         <button
                                             type="submit"
+                                            disabled={loading}
                                             className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-4 rounded-xl font-bold hover:from-yellow-500 hover:to-orange-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-transparent transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-500/25"
                                         >
-                                            🚀 Получить консультацию сейчас
+                                            {loading ? (
+                                                <div className="flex items-center justify-center">
+                                                    <svg className="animate-spin h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24">
+                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                    </svg>
+                                                    Отправка...
+                                                </div>
+                                            ) : (
+                                                '🚀 Получить консультацию сейчас'
+                                            )}
                                         </button>
                                     </form>
                                 </div>

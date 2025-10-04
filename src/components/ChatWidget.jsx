@@ -40,18 +40,17 @@ const ChatWidget = () => {
         setIsTyping(true);
 
         setTimeout(() => {
-            setIsTyping(false);
             let botResponse = '';
 
             switch (reply) {
                 case '💰 Страховые выплаты':
-                    botResponse = 'Мы поможем получить все положенные страховые выплаты. Средняя сумма выплат наших клиентов — 2.1 млн ₽. Хотите узнать размер ваших выплат?';
+                    botResponse = 'Мы поможем получить все положенные страховые выплаты. Средняя сумма выплат наших клиентов — 2.1 млн ₽.';
                     break;
                 case '🎖️ Льготы для военных':
-                    botResponse = 'Участникам СВО положены различные льготы: налоговые, жилищные, медицинские и др. Могу рассказать подробнее о каждой категории.';
+                    botResponse = 'Участникам СВО положены различные льготы: налоговые, жилищные, медицинские и др.';
                     break;
                 case '📞 Заказать звонок':
-                    botResponse = 'Отлично! Наш юрист перезвонит вам в течение 15 минут. Пожалуйста, укажите ваш номер телефона.';
+                    botResponse = '';
                     break;
                 case '📧 Написать на почту':
                     botResponse = 'Вы можете написать нам на почту: lipetskcentrprava@gmail.com или заполнить форму на сайте для быстрого ответа.';
@@ -61,7 +60,7 @@ const ChatWidget = () => {
             }
 
             const botMessage = {
-                id: messages.length + 2,
+                id: messages.length + 1,
                 text: botResponse,
                 isBot: true,
                 timestamp: new Date()
@@ -69,6 +68,19 @@ const ChatWidget = () => {
 
             setMessages(prev => [...prev, botMessage]);
         }, 1500);
+
+        setTimeout(() => {
+            setIsTyping(false);
+
+            const botMessage = {
+                id: messages.length + 1,
+                text: "Пожалуйста, оставьте заявку на бесплатную консультацию на нашем сайте, и наш юрист свяжется с вами в ближайшее время.",
+                isBot: true,
+                timestamp: new Date()
+            };
+
+            setMessages(prev => [...prev, botMessage]);
+        }, 2000);
     };
 
     const handleSendMessage = () => {
@@ -88,12 +100,14 @@ const ChatWidget = () => {
         setIsTyping(true);
         setTimeout(() => {
             setIsTyping(false);
+            
             const botMessage = {
                 id: messages.length + 2,
                 text: 'Спасибо за ваше сообщение! Наш юрист ответит вам в ближайшее время. Для срочной консультации звоните: +7 (474) 220-07-19',
                 isBot: true,
                 timestamp: new Date()
             };
+            
             setMessages(prev => [...prev, botMessage]);
         }, 1000);
     };
