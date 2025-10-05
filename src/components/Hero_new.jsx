@@ -168,17 +168,8 @@ const Hero = () => {
                         {/* CTA Buttons */}
                         <div className={`mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 transition-all duration-700 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                             <a
-                                href="#consultation"
-                                className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-base rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                            >
-                                Получить консультацию
-                                <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </a>
-                            <a
                                 href="tel:+74742200719"
-                                className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold text-sm sm:text-base border border-white/30 rounded-lg transition-all duration-300"
+                                className="inline-flex grow items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-white/20 hover:bg-white/30  text-white font-semibold text-sm sm:text-base border border-white/30 rounded-lg transition-all duration-300"
                             >
                                 <svg className="mr-2 w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
