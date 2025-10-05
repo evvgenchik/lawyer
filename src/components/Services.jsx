@@ -43,19 +43,19 @@ const Services = () => {
     ];
 
     return (
-        <section id="services" className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+        <section id="services" className="py-8 sm:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center">
-                    <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+                    <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 mb-4">
                         ⚖️ Наши услуги
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
                         Комплексная юридическая поддержка для военнослужащих с гарантией результата
                     </p>
                 </div>
 
-                <div className="mt-16">
-                    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-8 sm:mt-16">
+                    <div className="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
                         {services.map((service, index) => (
                             <div
                                 key={service.id}
@@ -67,10 +67,10 @@ const Services = () => {
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                                     {/* Content */}
-                                    <div className="relative p-8 z-10 flex flex-col h-full">
+                                    <div className="relative p-4 sm:p-8 z-10 flex flex-col h-full">
                                         {/* Number badge */}
-                                        <div className="absolute top-2 right-2 w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                                            <span className="text-xl font-black text-white">{service.id}</span>
+                                        <div className="absolute top-2 right-2 w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                                            <span className="text-sm sm:text-xl font-black text-white">{service.id}</span>
                                         </div>
 
                                         {/* Icon */}
@@ -79,12 +79,12 @@ const Services = () => {
                                         </div>
 
                                         {/* Title */}
-                                        <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-white transition-colors duration-300">
+                                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-4 group-hover:text-white transition-colors duration-300">
                                             {service.title}
                                         </h3>
 
                                         {/* Description */}
-                                        <p className="text-gray-600 group-hover:text-blue-100 transition-colors duration-300 leading-relaxed flex-grow">
+                                        <p className="text-sm sm:text-base text-gray-600 group-hover:text-blue-100 transition-colors duration-300 leading-relaxed flex-grow">
                                             {service.description}
                                         </p>
 
