@@ -179,8 +179,8 @@ const Hero = () => {
                                     key={index}
                                     className={`flex items-center p-4 rounded-xl transition-all duration-500 ${
                                         activeFeature === index
-                                            ? 'bg-white/20 backdrop-blur-sm border border-white/30 scale-105 shadow-2xl'
-                                            : 'bg-white/5 backdrop-blur-sm border border-white/10'
+                                            ? 'bg-white/20 border border-white/30 scale-105 shadow-2xl'
+                                            : 'bg-white/5 border border-white/10'
                                     }`}
                                 >
                                     <div className="flex-shrink-0 text-2xl mr-4">
