@@ -159,33 +159,34 @@ const AdminDashboard = () => {
         <div className="min-h-screen bg-gray-50">
             {/* Header */}
             <header className="bg-white shadow-sm border-b border-gray-200">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                    <div className="flex justify-between items-center">
-                        <div className="flex items-center">
-                            <h1 className="text-2xl font-bold text-gray-900">Панель управления</h1>
-                            <span className="ml-3 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-2 sm:space-y-0">
+                        <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0">
+                            <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Панель управления</h1>
+                            <span className="px-2 py-1 sm:px-3 sm:py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium w-fit">
                                 Администратор
                             </span>
                         </div>
-                        <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-2 sm:space-x-4">
                             <a
                                 href="/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-600 hover:text-gray-900 transition-colors"
+                                className="text-gray-600 hover:text-gray-900 transition-colors p-2"
+                                title="Открыть сайт"
                             >
-                                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                 </svg>
                             </a>
                             <button
                                 onClick={handleLogout}
-                                className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+                                className="flex items-center text-gray-600 hover:text-gray-900 transition-colors text-sm sm:text-base px-2 py-1 sm:px-0 sm:py-0"
                             >
-                                <svg className="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                                 </svg>
-                                Выйти
+                                <span className="hidden sm:inline">Выйти</span>
                             </button>
                         </div>
                     </div>
@@ -194,57 +195,57 @@ const AdminDashboard = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                    <div className="bg-white rounded-lg shadow p-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 mb-6 sm:mb-8">
+                    <div className="bg-white rounded-lg shadow p-4 sm:p-6">
                         <div className="flex items-center justify-between">
-                            <div>
-                                <p className="text-sm text-gray-600">Всего заявок</p>
-                                <p className="text-3xl font-bold text-gray-900 mt-1">{stats.total}</p>
+                            <div className="flex-1 min-w-0">
+                                <p className="text-xs sm:text-sm text-gray-600 truncate">Всего заявок</p>
+                                <p className="text-xl sm:text-3xl font-bold text-gray-900 mt-1">{stats.total}</p>
                             </div>
-                            <div className="bg-blue-100 rounded-full p-3">
-                                <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="bg-blue-100 rounded-full p-2 sm:p-3 ml-2 flex-shrink-0">
+                                <svg className="h-4 w-4 sm:h-6 sm:w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
                             </div>
                         </div>
                     </div>
 
-                    <div className="bg-white rounded-lg shadow p-6">
+                    <div className="bg-white rounded-lg shadow p-4 sm:p-6">
                         <div className="flex items-center justify-between">
-                            <div>
-                                <p className="text-sm text-gray-600">Новые</p>
-                                <p className="text-3xl font-bold text-blue-600 mt-1">{stats.new}</p>
+                            <div className="flex-1 min-w-0">
+                                <p className="text-xs sm:text-sm text-gray-600 truncate">Новые</p>
+                                <p className="text-xl sm:text-3xl font-bold text-blue-600 mt-1">{stats.new}</p>
                             </div>
-                            <div className="bg-blue-100 rounded-full p-3">
-                                <svg className="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="bg-blue-100 rounded-full p-2 sm:p-3 ml-2 flex-shrink-0">
+                                <svg className="h-4 w-4 sm:h-6 sm:w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                                 </svg>
                             </div>
                         </div>
                     </div>
 
-                    <div className="bg-white rounded-lg shadow p-6">
+                    <div className="bg-white rounded-lg shadow p-4 sm:p-6">
                         <div className="flex items-center justify-between">
-                            <div>
-                                <p className="text-sm text-gray-600">В работе</p>
-                                <p className="text-3xl font-bold text-yellow-600 mt-1">{stats.in_progress}</p>
+                            <div className="flex-1 min-w-0">
+                                <p className="text-xs sm:text-sm text-gray-600 truncate">В работе</p>
+                                <p className="text-xl sm:text-3xl font-bold text-yellow-600 mt-1">{stats.in_progress}</p>
                             </div>
-                            <div className="bg-yellow-100 rounded-full p-3">
-                                <svg className="h-6 w-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="bg-yellow-100 rounded-full p-2 sm:p-3 ml-2 flex-shrink-0">
+                                <svg className="h-4 w-4 sm:h-6 sm:w-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
                         </div>
                     </div>
 
-                    <div className="bg-white rounded-lg shadow p-6">
+                    <div className="bg-white rounded-lg shadow p-4 sm:p-6">
                         <div className="flex items-center justify-between">
-                            <div>
-                                <p className="text-sm text-gray-600">Завершено</p>
-                                <p className="text-3xl font-bold text-green-600 mt-1">{stats.completed}</p>
+                            <div className="flex-1 min-w-0">
+                                <p className="text-xs sm:text-sm text-gray-600 truncate">Завершено</p>
+                                <p className="text-xl sm:text-3xl font-bold text-green-600 mt-1">{stats.completed}</p>
                             </div>
-                            <div className="bg-green-100 rounded-full p-3">
-                                <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="bg-green-100 rounded-full p-2 sm:p-3 ml-2 flex-shrink-0">
+                                <svg className="h-4 w-4 sm:h-6 sm:w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
@@ -253,12 +254,12 @@ const AdminDashboard = () => {
                 </div>
 
                 {/* Filters and Search */}
-                <div className="bg-white rounded-lg shadow mb-6 p-6">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
-                        <div className="flex space-x-2">
+                <div className="bg-white rounded-lg shadow mb-4 sm:mb-6 p-4 sm:p-6">
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
+                        <div className="flex flex-wrap gap-2">
                             <button
                                 onClick={() => setFilter('all')}
-                                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-medium transition-colors text-sm sm:text-base ${
                                     filter === 'all'
                                         ? 'bg-blue-600 text-white'
                                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -268,7 +269,7 @@ const AdminDashboard = () => {
                             </button>
                             <button
                                 onClick={() => setFilter('new')}
-                                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-medium transition-colors text-sm sm:text-base ${
                                     filter === 'new'
                                         ? 'bg-blue-600 text-white'
                                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -278,7 +279,7 @@ const AdminDashboard = () => {
                             </button>
                             <button
                                 onClick={() => setFilter('in_progress')}
-                                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-medium transition-colors text-sm sm:text-base ${
                                     filter === 'in_progress'
                                         ? 'bg-blue-600 text-white'
                                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -288,7 +289,7 @@ const AdminDashboard = () => {
                             </button>
                             <button
                                 onClick={() => setFilter('completed')}
-                                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                                className={`px-3 py-2 sm:px-4 sm:py-2 rounded-lg font-medium transition-colors text-sm sm:text-base ${
                                     filter === 'completed'
                                         ? 'bg-blue-600 text-white'
                                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -298,15 +299,15 @@ const AdminDashboard = () => {
                             </button>
                         </div>
 
-                        <div className="relative">
+                        <div className="relative w-full lg:w-auto">
                             <input
                                 type="text"
                                 placeholder="Поиск по имени, email, телефону..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full md:w-80"
+                                className="pl-9 sm:pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full lg:w-80 text-sm sm:text-base"
                             />
-                            <svg className="h-5 w-5 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </div>
@@ -327,22 +328,22 @@ const AdminDashboard = () => {
                             <table className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-50">
                                     <tr>
-                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Клиент
                                         </th>
-                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">
                                             Контакты
                                         </th>
-                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
                                             Услуга
                                         </th>
-                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Дата
                                         </th>
-                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Статус
                                         </th>
-                                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <th className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Действия
                                         </th>
                                     </tr>
@@ -350,40 +351,42 @@ const AdminDashboard = () => {
                                 <tbody className="bg-white divide-y divide-gray-200">
                                     {filteredConsultations.map((consultation) => (
                                         <tr key={consultation.id} className="hover:bg-gray-50 transition-colors">
-                                            <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="font-medium text-gray-900">{consultation.name}</div>
+                                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
+                                                <div className="font-medium text-gray-900 text-sm sm:text-base">{consultation.name}</div>
+                                                <div className="text-xs sm:text-sm text-gray-500 sm:hidden">{consultation.phone}</div>
+                                                <div className="text-xs text-gray-400 sm:hidden">{consultation.email}</div>
                                             </td>
-                                            <td className="px-6 py-4">
+                                            <td className="px-3 sm:px-6 py-4 hidden sm:table-cell">
                                                 <div className="text-sm text-gray-900">{consultation.phone}</div>
                                                 <div className="text-sm text-gray-500">{consultation.email}</div>
                                             </td>
-                                            <td className="px-6 py-4">
+                                            <td className="px-3 sm:px-6 py-4 hidden md:table-cell">
                                                 <div className="text-sm text-gray-900">{consultation.service_type || 'Общая консультация'}</div>
                                             </td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500">
                                                 {formatDate(consultation.created_at)}
                                             </td>
-                                            <td className="px-6 py-4 whitespace-nowrap">
+                                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                                                 {getStatusBadge(consultation.status)}
                                             </td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm">
-                                                <div className="flex items-center space-x-5">
+                                            <td className="px-3 sm:px-6 py-4 whitespace-nowrap text-sm">
+                                                <div className="flex items-center space-x-2 sm:space-x-5">
                                                     <button
                                                         onClick={() => setSelectedConsultation(consultation)}
-                                                        className="text-blue-600 hover:text-blue-800 transition-colors"
+                                                        className="text-blue-600 hover:text-blue-800 transition-colors p-1 sm:p-0"
                                                         title="Просмотреть"
                                                     >
-                                                        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                                         </svg>
                                                     </button>
                                                     <button
                                                         onClick={() => deleteConsultation(consultation.id)}
-                                                        className="text-red-600 hover:text-red-800 transition-colors"
+                                                        className="text-red-600 hover:text-red-800 transition-colors p-1 sm:p-0"
                                                         title="Удалить"
                                                     >
-                                                        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                         </svg>
                                                     </button>
@@ -391,7 +394,7 @@ const AdminDashboard = () => {
                                                         <select
                                                             value={consultation.status}
                                                             onChange={(e) => updateStatus(consultation.id, e.target.value)}
-                                                            className="text-sm border border-gray-300 rounded px-2 py-1 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                                            className="text-xs sm:text-sm border border-gray-300 rounded px-1 sm:px-2 py-1 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                                         >
                                                             <option value="new">Новая</option>
                                                             <option value="in_progress">В работе</option>
@@ -412,86 +415,86 @@ const AdminDashboard = () => {
             {/* Detail Modal */}
             {selectedConsultation && (
                 <div 
-                    className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+                    className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-2 sm:p-4 z-50"
                     onClick={() => setSelectedConsultation(null)}
                 >
                     <div 
-                        className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+                        className="bg-white rounded-lg sm:rounded-2xl max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto"
                         onClick={(e) => e.stopPropagation()} 
                     >
-                        <div className="p-6">
-                            <div className="flex justify-between items-start mb-6">
+                        <div className="p-4 sm:p-6">
+                            <div className="flex justify-between items-start mb-4 sm:mb-6">
                                 <div>
-                                    <h3 className="text-2xl font-bold text-gray-900">Детали заявки</h3>
-                                    <p className="text-sm text-gray-500 mt-1">ID: {selectedConsultation.id}</p>
+                                    <h3 className="text-lg sm:text-2xl font-bold text-gray-900">Детали заявки</h3>
+                                    <p className="text-xs sm:text-sm text-gray-500 mt-1">ID: {selectedConsultation.id}</p>
                                 </div>
                                 <button
                                     onClick={() => setSelectedConsultation(null)}
-                                    className="text-gray-400 hover:text-gray-600 transition-colors"
+                                    className="text-gray-400 hover:text-gray-600 transition-colors p-1"
                                 >
-                                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                                     </svg>
                                 </button>
                             </div>
 
-                            <div className="space-y-4">
+                            <div className="space-y-3 sm:space-y-4">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Имя клиента</label>
-                                    <p className="text-gray-900">{selectedConsultation.name}</p>
+                                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Имя клиента</label>
+                                    <p className="text-sm sm:text-base text-gray-900">{selectedConsultation.name}</p>
                                 </div>
 
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Телефон</label>
-                                        <a href={`tel:${selectedConsultation.phone}`} className="text-blue-600 hover:text-blue-800">
+                                        <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Телефон</label>
+                                        <a href={`tel:${selectedConsultation.phone}`} className="text-blue-600 hover:text-blue-800 text-sm sm:text-base break-all">
                                             {selectedConsultation.phone}
                                         </a>
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                        <a href={`mailto:${selectedConsultation.email}`} className="text-blue-600 hover:text-blue-800">
+                                        <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Email</label>
+                                        <a href={`mailto:${selectedConsultation.email}`} className="text-blue-600 hover:text-blue-800 text-sm sm:text-base break-all">
                                             {selectedConsultation.email}
                                         </a>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Тип услуги</label>
-                                    <p className="text-gray-900">{selectedConsultation.service_type || 'Не указано'}</p>
+                                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Тип услуги</label>
+                                    <p className="text-sm sm:text-base text-gray-900">{selectedConsultation.service_type || 'Не указано'}</p>
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Сообщение</label>
-                                    <p className="text-gray-900 whitespace-pre-wrap bg-gray-50 p-4 rounded-lg">
+                                    <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Сообщение</label>
+                                    <p className="text-sm sm:text-base text-gray-900 whitespace-pre-wrap bg-gray-50 p-3 sm:p-4 rounded-lg">
                                         {selectedConsultation.message || 'Нет сообщения'}
                                     </p>
                                 </div>
 
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Дата создания</label>
-                                        <p className="text-gray-900">{formatDate(selectedConsultation.created_at)}</p>
+                                        <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Дата создания</label>
+                                        <p className="text-sm sm:text-base text-gray-900">{formatDate(selectedConsultation.created_at)}</p>
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Статус</label>
-                                        <div>{getStatusBadge(selectedConsultation.status)}</div>
+                                        <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Статус</label>
+                                        <div className="mt-1">{getStatusBadge(selectedConsultation.status)}</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="mt-6 flex justify-between">
+                            <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row justify-between gap-3 sm:gap-0">
                                 <button
                                     onClick={() => deleteConsultation(selectedConsultation.id)}
-                                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                                    className="px-3 sm:px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm sm:text-base order-2 sm:order-1"
                                 >
                                     Удалить заявку
                                 </button>
 
-                                <div className="flex space-x-3">
+                                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 order-1 sm:order-2">
                                     <button
                                         onClick={() => setSelectedConsultation(null)}
-                                        className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                                        className="px-3 sm:px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors text-sm sm:text-base"
                                     >
                                         Закрыть
                                     </button>
@@ -501,7 +504,7 @@ const AdminDashboard = () => {
                                                 updateStatus(selectedConsultation.id, 'completed');
                                                 setSelectedConsultation(null);
                                             }}
-                                            className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                                            className="px-3 sm:px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm sm:text-base"
                                         >
                                             Отметить как завершено
                                         </button>
