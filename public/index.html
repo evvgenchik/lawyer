@@ -13,6 +13,24 @@
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
+        
+        <!-- GitHub Pages SPA redirect handler: convert ?/path back to real pathname -->
+        <script>
+          (function () {
+            try {
+              var m = window.location.search.match(/^\?\/(.*)/);
+              if (m && m[1]) {
+                var path = m[1].replace(/~and~/g, '&');
+                var base = window.location.pathname.replace(/\/$/, '');
+                var target = base + '/' + path;
+                window.history.replaceState({}, document.title, target + window.location.hash);
+              }
+            } catch (e) {
+              console.warn('spa-redirect rewrite failed', e);
+            }
+          })();
+        </script>
+        
         <div id="root"></div>
     </body>
 </html>

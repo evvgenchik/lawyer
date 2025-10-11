@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages SPA redirect for /lawyer/admin -> /lawyer/?/admin
+      (function () {
+        var pathSegmentsToKeep = 1; // Keep 'lawyer' segment
+        var l = window.location;
+        var parts = l.pathname.split('/').filter(Boolean);
+        var repo = parts.slice(0, pathSegmentsToKeep).join('/');
+        var rest = parts.slice(pathSegmentsToKeep).join('/');
+        
+        if (rest) {
+          var base = l.protocol + '//' + l.host + '/' + repo + '/';
+          var query = '?/' + rest.replace(/&/g, '~and~');
+          l.replace(base + query + (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') + l.hash);
+        } else {
+          // No path beyond repo, redirect to base
+          l.replace(l.protocol + '//' + l.host + '/' + repo + '/');
+        }
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
