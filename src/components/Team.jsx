@@ -4,7 +4,7 @@ const Team = () => {
             name: 'Коротеев Владислав Олегович',
             education: 'По жизни здравый пацан, юрист по образованию',
             specialization: 'Самый большой начальник в этой фирме',
-            image: '/images/vladik2.PNG'
+            image: '/images/vladik2.jpg'
         }
         // {
         //     name: 'Коротеев Владислав Олегович',
