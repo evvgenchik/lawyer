@@ -3,22 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Lawyer App</title>
-    <script type="text/javascript">
-      // SPA redirect for GitHub Pages (rafgraph-style), safe for repo served at /lawyer/
-      (function () {
-        var pathSegmentsToKeep = 1; // keep "/lawyer"
-        var l = window.location;
-        var parts = l.pathname.split('/').filter(Boolean); // ['lawyer','admin',...]
-        var repoPath = parts.slice(0, pathSegmentsToKeep).join('/');
-        var rest = parts.slice(pathSegmentsToKeep).join('/');
-        // Build target: /<repoPath>/?/<rest> (or if rest empty, just /<repoPath>/)
-        var target = l.protocol + '//' + l.host + '/' + repoPath + '/';
-        if (rest) target += '?/' + rest;
-        if (l.search) target += (rest ? '&' : '?') + l.search.slice(1).replace(/&/g, '~and~');
-        target += l.hash || '';
-        l.replace(target);
-      }());
-    </script>
+        <script>
+          // If 404.html redirected to "/<repo>/?/some/path", convert "?/some/path" into pathname
+          (function () {
+            try {
+              var m = window.location.search.match(/^\?\/(.*)/);
+              if (m && m[1]) {
+                var path = m[1].replace(/~and~/g, '&');
+                // keep base pathname (e.g. /lawyer) and append the real path
+                var base = window.location.pathname.replace(/\/$/, '');
+                var target = base + '/' + path;
+                // replace history so Router sees the correct pathname
+                window.history.replaceState({}, document.title, target + window.location.hash);
+              }
+            } catch (e) {
+              // fail silently
+              console.warn('spa-redirect rewrite failed', e);
+            }
+          })();
+        </script>
   </head>
   <body></body>
 </html>
