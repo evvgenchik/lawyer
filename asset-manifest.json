@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/lawyer/static/css/main.09ce1772.css",
+    "main.js": "/lawyer/static/js/main.7a272ba9.js",
+    "static/js/858.368aeb62.chunk.js": "/lawyer/static/js/858.368aeb62.chunk.js",
+    "static/js/563.565c6321.chunk.js": "/lawyer/static/js/563.565c6321.chunk.js",
+    "static/js/948.b77632ae.chunk.js": "/lawyer/static/js/948.b77632ae.chunk.js",
+    "static/js/18.ba97adc2.chunk.js": "/lawyer/static/js/18.ba97adc2.chunk.js",
+    "index.html": "/lawyer/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.09ce1772.css",
+    "static/js/main.7a272ba9.js"
+  ]
+}
