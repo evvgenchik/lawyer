@@ -4,21 +4,21 @@
     <meta charset="utf-8">
     <title>Lawyer App</title>
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // https://github.com/rafgraph/spa-github-pages
-      // This script redirects all routes to index.html with query parameters
-      var pathSegmentsToKeep = 1;  // Keep /lawyer/ in the path
-
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      // SPA redirect for GitHub Pages (rafgraph-style), safe for repo served at /lawyer/
+      (function () {
+        var pathSegmentsToKeep = 1; // keep "/lawyer"
+        var l = window.location;
+        var parts = l.pathname.split('/').filter(Boolean); // ['lawyer','admin',...]
+        var repoPath = parts.slice(0, pathSegmentsToKeep).join('/');
+        var rest = parts.slice(pathSegmentsToKeep).join('/');
+        // Build target: /<repoPath>/?/<rest> (or if rest empty, just /<repoPath>/)
+        var target = l.protocol + '//' + l.host + '/' + repoPath + '/';
+        if (rest) target += '?/' + rest;
+        if (l.search) target += (rest ? '&' : '?') + l.search.slice(1).replace(/&/g, '~and~');
+        target += l.hash || '';
+        l.replace(target);
+      }());
     </script>
   </head>
-  <body>
-  </body>
+  <body></body>
 </html>
