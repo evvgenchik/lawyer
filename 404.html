@@ -2,26 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Lawyer App</title>
-        <script>
-          // If 404.html redirected to "/<repo>/?/some/path", convert "?/some/path" into pathname
-          (function () {
-            try {
-              var m = window.location.search.match(/^\?\/(.*)/);
-              if (m && m[1]) {
-                var path = m[1].replace(/~and~/g, '&');
-                // keep base pathname (e.g. /lawyer) and append the real path
-                var base = window.location.pathname.replace(/\/$/, '');
-                var target = base + '/' + path;
-                // replace history so Router sees the correct pathname
-                window.history.replaceState({}, document.title, target + window.location.hash);
-              }
-            } catch (e) {
-              // fail silently
-              console.warn('spa-redirect rewrite failed', e);
-            }
-          })();
-        </script>
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages SPA redirect for /lawyer/admin -> /lawyer/?/admin
+      (function () {
+        var pathSegmentsToKeep = 1; // Keep 'lawyer' segment
+        var l = window.location;
+        var parts = l.pathname.split('/').filter(Boolean);
+        var repo = parts.slice(0, pathSegmentsToKeep).join('/');
+        var rest = parts.slice(pathSegmentsToKeep).join('/');
+        
+        if (rest) {
+          var base = l.protocol + '//' + l.host + '/' + repo + '/';
+          var query = '?/' + rest.replace(/&/g, '~and~');
+          l.replace(base + query + (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') + l.hash);
+        } else {
+          // No path beyond repo, redirect to base
+          l.replace(l.protocol + '//' + l.host + '/' + repo + '/');
+        }
+      })();
+    </script>
   </head>
   <body></body>
 </html>
