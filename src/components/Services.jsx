@@ -110,7 +110,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className="mt-8 sm:mt-12 lg:mt-16 text-center">
+                {/* <div className="mt-8 sm:mt-12 lg:mt-16 text-center">
                     <div className="bg-primary-50 rounded-lg p-4 sm:p-6 lg:p-8 mx-2 sm:mx-0">
                         <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-primary-900 mb-3 sm:mb-4">
                             Какие ещё выплаты можно получить от государства
@@ -130,7 +130,7 @@ const Services = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="mt-6 sm:mt-8 lg:mt-16 text-center px-4 sm:px-0">
                     <a

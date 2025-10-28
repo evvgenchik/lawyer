@@ -5,25 +5,25 @@ const Testimonials = () => {
 
     const testimonials = [
         {
-            name: 'Сергей Михайлович К.',
-            role: 'Участник СВО',
-            text: 'Благодаря юристам получил страховые выплаты в полном объеме. Процесс занял всего 2 месяца, хотя изначально мне отказали.',
+            name: 'Сергей М.',
+            role: 'Частный клиент',
+            text: 'Благодаря юридической поддержке смог получить страховую выплату в полном объёме. Процесс занял два месяца, хотя сначала платёж был оспорен.',
             amount: '2,1 млн ₽',
             //image: 'https://via.placeholder.com/80x80/3B82F6/FFFFFF?text=СМ',
             rating: 5
         },
         {
-            name: 'Александр Петрович В.',
-            role: 'Мобилизованный',
-            text: 'Помогли вернуться домой к семье. Профессиональный подход, все документы подготовили грамотно.',
-            amount: 'Возвращение домой',
+            name: 'Александр П.',
+            role: 'Индивидуальный предприниматель',
+            text: 'Профессиональная помощь при разрешении спора с контрагентом — вернули средства и восстановили репутацию бизнеса.',
+            amount: 'Возвращены средства',
             //image: 'https://via.placeholder.com/80x80/3B82F6/FFFFFF?text=АП',
             rating: 5
         },
         {
-            name: 'Дмитрий Андреевич М.',
-            role: 'Доброволец',
-            text: 'Отличные специалисты! Получил все положенные льготы и выплаты. Рекомендую всем военнослужащим.',
+            name: 'Дмитрий А.',
+            role: 'Представитель семьи',
+            text: 'Помогли оформить компенсацию и защитить права в суде. Работа была быстрой, понятной и эффективной.',
             amount: '1,8 млн ₽',
             //image: 'https://via.placeholder.com/80x80/3B82F6/FFFFFF?text=ДА',
             rating: 5
@@ -31,7 +31,7 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+        <section id="testimonials" className="py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-slate-50 to-blue-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-8 sm:mb-10 lg:mb-12">
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 sm:mb-4">

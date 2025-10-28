@@ -1,7 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    // Add smooth scrolling behavior
+    useEffect(() => {
+        document.documentElement.style.scrollBehavior = 'smooth';
+        return () => {
+            document.documentElement.style.scrollBehavior = 'auto';
+        };
+    }, []);
+
+    // Close mobile menu when link is clicked
+    const handleNavClick = () => {
+        setIsMenuOpen(false);
+    };
 
     return (
         <header className="bg-white shadow-lg sticky top-0 z-50">
@@ -9,19 +22,25 @@ const Header = () => {
                 <div className="flex justify-between items-center py-2 sm:py-4">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
-                            <h1 className="text-lg sm:text-2xl font-bold text-primary-700">ЮРИДИЧЕСКАЯ ПОМОЩЬ</h1>
+                            <h1 className="text-lg sm:text-2xl font-bold text-primary-700">Кодекс</h1>
                         </div>
                     </div>
 
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
-                            <a href="#services" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
-                                Услуги
+                            <a href="#consultation" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+                                Консультация
+                            </a>
+                            <a href="#testimonials" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+                                Отзывы
                             </a>
                             <a href="#team" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
                                 Команда
                             </a>
-                            <a href="#contact" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+                            <a href="#faq" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+                                Вопросы
+                            </a>
+                            <a href="#contacts" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
                                 Контакты
                             </a>
                         </div>
@@ -69,13 +88,19 @@ const Header = () => {
                 {isMenuOpen && (
                     <div className="md:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <a href="#services" className="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">
-                                Услуги
+                            <a href="#consultation" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+                                Консультация
                             </a>
-                            <a href="#team" className="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">
+                            <a href="#testimonials" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+                                Отзывы
+                            </a>
+                            <a href="#team" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
                                 Команда
                             </a>
-                            <a href="#contact" className="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">
+                            <a href="#faq" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+                                Вопросы
+                            </a>
+                            <a href="#contacts" className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
                                 Контакты
                             </a>
                             <div className="pt-4 pb-3 border-t border-gray-200">

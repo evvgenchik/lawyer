@@ -119,73 +119,112 @@ const Hero = () => {
     };
 
     return (
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-            {/* Subtle background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
-            <div className="absolute top-0 left-0 w-full h-full">
-                <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <section id="consultation" className="relative overflow-hidden bg-white">
+            {/* Diagonal background sections */}
+            <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-white"></div>
+                <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-blue-600/5 to-transparent transform skew-x-12 origin-top-right"></div>
+                <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-indigo-600/5 to-transparent transform -skew-x-12"></div>
             </div>
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-                <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-                    {/* Left Content */}
-                    <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
-                        <h1 className={`text-3xl sm:text-4xl lg:text-6xl tracking-tight font-bold transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                            <span className="block text-white">
-                                Юридическая помощь
-                            </span>
-                            <span className="block text-blue-100 mt-3 text-xl sm:text-2xl lg:text-4xl font-normal">
-                                военнослужащим и участникам СВО
-                            </span>
-                            <span className="block text-blue-200 mt-2 text-lg sm:text-xl lg:text-3xl font-normal">
-                                в Липецке и по всей России
-                            </span>
-                        </h1>
-
-                        {/* Features */}
-                        <div className={`mt-6 sm:mt-8 space-y-3 sm:space-y-4 transition-all duration-700 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                            {[
-                                { text: 'Бесплатная первичная консультация' },
-                                { text: 'Более 300 млн ₽ страховых выплат для клиентов' },
-                                { text: 'Опыт защиты прав военнослужащих' },
-                                { text: 'Работаем дистанционно по всей России' }
-                            ].map((feature, index) => (
-                                <div
-                                    key={index}
-                                    className="flex items-start gap-3 p-3 sm:p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg hover:bg-white/10 transition-colors duration-300"
-                                >
-                                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 mt-0.5 bg-blue-500 rounded-full flex items-center justify-center">
-                                        <svg className="h-3 w-3 sm:h-4 sm:w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <p className="text-sm sm:text-base lg:text-lg text-blue-50 leading-relaxed">{feature.text}</p>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* CTA Buttons */}
-                        <div className={`mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 transition-all duration-700 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                            <a
-                                href="tel:+74742200719"
-                                className="inline-flex grow items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-white/20 hover:bg-white/30  text-white font-semibold text-sm sm:text-base border border-white/30 rounded-lg transition-all duration-300"
-                            >
-                                <svg className="mr-2 w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+                {/* Two-column asymmetric layout */}
+                <div className="lg:grid lg:grid-cols-5 lg:gap-12 items-start">
+                    {/* Left column - 3/5 width */}
+                    <div className="lg:col-span-3 mb-12 lg:mb-0">
+                        <div className={`transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
+                            {/* Trust badge */}
+                            <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full mb-6">
+                                <svg className="w-4 h-4 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                                 </svg>
-                                Позвонить сейчас
-                            </a>
+                                <span className="text-blue-800 text-sm font-medium">Лицензированная практика с 2019 года</span>
+                            </div>
+
+                            {/* Main headline */}
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                                Юридическая защита
+                                <span className="block text-blue-600 mt-2">ваших прав и интересов</span>
+                            </h1>
+
+                            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                                Комплексное юридическое сопровождение физических и юридических лиц. Работаем по всей России дистанционно и очно в Липецке.
+                            </p>
+
+                            {/* Key services with icons */}
+                            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                                {[
+                                    { icon: '⚖️', title: 'Гражданские дела', desc: 'Защита в судах любой инстанции' },
+                                    { icon: '💼', title: 'Корпоративное право', desc: 'Сопровождение бизнеса' },
+                                    { icon: '🏠', title: 'Недвижимость', desc: 'Сделки и споры' },
+                                    { icon: '👨‍👩‍👧', title: 'Семейное право', desc: 'Разводы, алименты, опека' }
+                                ].map((service, index) => (
+                                    <div key={index} className="flex items-start space-x-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                        <span className="text-2xl">{service.icon}</span>
+                                        <div>
+                                            <h3 className="font-semibold text-gray-900 text-sm">{service.title}</h3>
+                                            <p className="text-xs text-gray-500">{service.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* CTA buttons */}
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <a
+                                    href="tel:+74742200719"
+                                    className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-colors shadow-lg shadow-blue-600/30"
+                                >
+                                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                    Позвонить сейчас
+                                </a>
+                                <a
+                                    href="https://wa.me/79272588921"
+                                    className="inline-flex items-center justify-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-colors"
+                                >
+                                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.703"/>
+                                    </svg>
+                                    WhatsApp
+                                </a>
+                            </div>
+
+                            {/* Trust indicators */}
+                            <div className="mt-8 pt-8 border-t border-gray-200">
+                                <div className="grid grid-cols-3 gap-6 text-center">
+                                    <div>
+                                        <div className="text-3xl font-bold text-blue-600 mb-1">500+</div>
+                                        <div className="text-sm text-gray-600">выигранных дел</div>
+                                    </div>
+                                    <div>
+                                        <div className="text-3xl font-bold text-blue-600 mb-1">95%</div>
+                                        <div className="text-sm text-gray-600">успешных решений</div>
+                                    </div>
+                                    <div>
+                                        <div className="text-3xl font-bold text-blue-600 mb-1">24/7</div>
+                                        <div className="text-sm text-gray-600">доступность</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Right Form */}
-                    <div className={`mt-8 sm:mt-12 lg:mt-0 relative sm:max-w-lg sm:mx-auto lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center transition-all duration-700 delay-400 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-                        <div className="relative mx-auto w-full lg:max-w-md">
-                            <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8">
-                                <div className="relative z-10">
-                                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Бесплатная консультация</h3>
-                                    <p className="text-gray-600 text-sm sm:text-base mb-6">Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+                    {/* Right column - 2/5 width with elevated form */}
+                    <div className="lg:col-span-2">
+                        <div className={`sticky top-8 transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+                                {/* Form header */}
+                                <div className="text-center mb-6">
+                                    <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg shadow-blue-600/30">
+                                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2">Бесплатная консультация</h3>
+                                    <p className="text-sm text-gray-600">Опишите вашу ситуацию — юрист проконсультирует в течение часа</p>
+                                </div>
 
                                     {success && (
                                         <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-green-50 border border-green-200 rounded-lg">
@@ -279,16 +318,25 @@ const Hero = () => {
                                                     Отправка...
                                                 </div>
                                             ) : (
-                                                'Получить консультацию'
-                                            )}
-                                        </button>
-                                    </form>
+                                                    'Заказать звонок'
+                                                )}
+                                            </button>
+                                        </form>
+
+                                        {/* Trust badge */}
+                                        <div className="mt-6 pt-6 border-t border-gray-100 text-center">
+                                            <p className="text-xs text-gray-500">
+                                                <svg className="w-4 h-4 inline mr-1 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                                </svg>
+                                                Конфиденциальность гарантирована
+                                            </p>
+                                        </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     );
 };

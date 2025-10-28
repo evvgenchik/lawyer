@@ -4,24 +4,24 @@ const statsData = [
     {
         number: 300,
         suffix: '+',
-        label: 'млн. ₽ страховых выплат',
-        description: 'получили для клиентов',
+        label: 'млн. ₽ взыскано для клиентов',
+        description: 'выплат и компенсаций',
         icon: '💰',
         color: 'from-green-400 to-emerald-600'
     },
     {
-        number: 100,
+        number: 120,
         suffix: '+',
-        label: 'мобилизованных',
-        description: 'вернули с боевых действий',
-        icon: '🛡️',
+        label: 'довольных клиентов',
+        description: 'по всей стране',
+        icon: '🤝',
         color: 'from-blue-400 to-blue-600'
     },
     {
-        number: 5,
+        number: 15,
         suffix: '+',
         label: 'лет опыта',
-        description: 'в военном праве',
+        description: 'в различных областях права',
         icon: '⚖️',
         color: 'from-purple-400 to-purple-600'
     },
