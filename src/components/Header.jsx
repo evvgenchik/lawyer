@@ -12,9 +12,9 @@ const Header = () => {
     }, []);
 
     // Close mobile menu when link is clicked
-    const handleNavClick = () => {
-        setIsMenuOpen(false);
-    };
+    // const handleNavClick = () => {
+    //     setIsMenuOpen(false);
+    // };
 
     return (
         <header className="bg-white shadow-lg sticky top-0 z-50">
