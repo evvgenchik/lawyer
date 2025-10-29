@@ -24,8 +24,8 @@ const PrivacyPolicy = () => {
         <p className="mb-4">
           По всем вопросам, связанным с обработкой персональных данных, вы можете обращаться:
         </p>
-        <p className="mb-2">Телефон: +7 (474) 220-07-19</p>
-        <p className="mb-2">Email: lipetskcentrprava@gmail.com</p>
+        <p className="mb-2">Телефон: +7 (929) 012-38-48</p>
+        <p className="mb-2">Email: kodex48@mail.ru</p>
       </div>
     </div>
   );

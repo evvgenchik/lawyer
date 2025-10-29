@@ -21,7 +21,8 @@ module.exports = {
           500: '#22c55e',
           600: '#16a34a',
           700: '#15803d',
-        }
+        },
+        'custom-blue': '#022739'
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

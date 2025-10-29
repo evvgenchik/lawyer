@@ -176,7 +176,7 @@ See `SUPABASE_SETUP.md` for common issues and solutions.
 **Business Details:**
 - Phone: +7 (474) 220-07-19
 - WhatsApp: +7 927 258-89-21
-- Email: lipetskcentrprava@gmail.com
+- Email: kodex48@mail.ru
 - Address: г. Липецк, Коммунальная площадь, 9, 1 этаж
 
 ## 📄 License

@@ -2,15 +2,14 @@ import { useState, useEffect } from 'react';
 
 const statsData = [
     {
-        number: 300,
-        suffix: '+',
-        label: 'млн. ₽ взыскано для клиентов',
-        description: 'выплат и компенсаций',
-        icon: '💰',
-        color: 'from-green-400 to-emerald-600'
+        label: 'Первичная консультация',
+        description: 'Бесплатно',
+        icon: '🎁',
+        color: 'from-green-400 to-emerald-600',
+        noNumber: true
     },
     {
-        number: 120,
+        number: 500,
         suffix: '+',
         label: 'довольных клиентов',
         description: 'по всей стране',
@@ -18,7 +17,7 @@ const statsData = [
         color: 'from-blue-400 to-blue-600'
     },
     {
-        number: 15,
+        number: 10,
         suffix: '+',
         label: 'лет опыта',
         description: 'в различных областях права',
@@ -47,6 +46,8 @@ const Stats = () => {
 
                     // Animate numbers
                     statsData.forEach((stat, index) => {
+                        if (!stat.number) return;
+
                         let start = 0;
                         const end = stat.number;
                         const duration = 2000;
@@ -97,7 +98,7 @@ const Stats = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-8 lg:grid-cols-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 lg:grid-cols-4">
                     {statsData.map((stat, index) => (
                         <div
                             key={index}
@@ -110,24 +111,44 @@ const Stats = () => {
 
                                 {/* Icon */}
                                 <div className="text-center mb-2 sm:mb-3 lg:mb-6">
-                                    <div className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl bg-white/20 text-lg sm:text-xl lg:text-3xl mb-1 sm:mb-2 lg:mb-4 group-hover:scale-110 transition-transform duration-300">
+                                    <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl bg-white/20 text-lg sm:text-xl lg:text-3xl mb-1 sm:mb-2 lg:mb-4 group-hover:scale-110 transition-transform duration-300">
                                         {stat.icon}
                                     </div>
                                 </div>
 
-                                {/* Animated Number */}
+                                {/* Content: handle items with and without numbers differently */}
                                 <div className="text-center relative z-10">
-                                    <div className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mb-0.5 sm:mb-1 lg:mb-2 group-hover:text-yellow-300 transition-colors duration-300">
-                                        {isVisible ? animatedNumbers[index] : 0}{stat.suffix}
-                                    </div>
+                                    {/* For items that have numbers */}
+                                    {stat.number && (
+                                        <div className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mb-0.5 sm:mb-1 lg:mb-2 group-hover:text-yellow-300 transition-colors duration-300">
+                                            {isVisible ? animatedNumbers[index] : 0}{stat.suffix}
+                                        </div>
+                                    )}
 
-                                    <div className="text-xs sm:text-sm lg:text-lg font-semibold text-blue-200 mb-0.5 sm:mb-1 lg:mb-2 group-hover:text-white transition-colors duration-300">
-                                        {stat.label}
-                                    </div>
+                                    {/* For items without number (first column) show label prominently and a badge for "Бесплатно" */}
+                                    {stat.noNumber && (
+                                        <div className="flex flex-col items-center justify-center gap-2">
+                                            <div className="text-lg sm:text-xl lg:text-2xl font-extrabold text-white">
+                                                {stat.label}
+                                            </div>
+                                            <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-green-600/90 text-white text-lg font-semibold shadow-sm">
+                                                <span>{stat.description}</span>
+                                            </div>
+                                        </div>
+                                    )}
 
-                                    <div className="text-xs sm:text-sm text-blue-300 group-hover:text-blue-100 transition-colors duration-300">
-                                        {stat.description}
-                                    </div>
+                                    {/* For numbered items show label/description in smaller text */}
+                                    {stat.number && (
+                                        <>
+                                            <div className="text-xs sm:text-sm lg:text-lg font-semibold text-blue-200 mb-0.5 sm:mb-1 lg:mb-2 group-hover:text-white transition-colors duration-300">
+                                                {stat.label}
+                                            </div>
+
+                                            <div className="text-xs sm:text-sm text-blue-300 group-hover:text-blue-100 transition-colors duration-300">
+                                                {stat.description}
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
 
                                 {/* Decorative elements */}

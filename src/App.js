@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header.jsx';
 import Hero from './components/Hero_new.jsx';
-// import Services from './components/Services.jsx';
+import Services from './components/Services.jsx';
 import Stats from './components/Stats.jsx';
-import Testimonials from './components/Testimonials.jsx';
 import Team from './components/Team.jsx';
 import FAQ from './components/FAQ.jsx';
 import ConsultationForm from './components/ConsultationForm.jsx';
@@ -27,8 +26,7 @@ function App() {
                             <Header />
                             <Hero />
                             <Stats />
-                            {/* <Services /> */}
-                            <Testimonials />
+                            <Services />
                             <Team />
                             <FAQ />
                             <ConsultationForm />

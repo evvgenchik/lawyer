@@ -133,14 +133,6 @@ const Hero = () => {
                     {/* Left column - 3/5 width */}
                     <div className="lg:col-span-3 mb-12 lg:mb-0">
                         <div className={`transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
-                            {/* Trust badge */}
-                            <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full mb-6">
-                                <svg className="w-4 h-4 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span className="text-blue-800 text-sm font-medium">Лицензированная практика с 2019 года</span>
-                            </div>
-
                             {/* Main headline */}
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
                                 Юридическая защита
@@ -150,29 +142,49 @@ const Hero = () => {
                             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                                 Комплексное юридическое сопровождение физических и юридических лиц. Работаем по всей России дистанционно и очно в Липецке.
                             </p>
-
-                            {/* Key services with icons */}
-                            <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                                {[
-                                    { icon: '⚖️', title: 'Гражданские дела', desc: 'Защита в судах любой инстанции' },
-                                    { icon: '💼', title: 'Корпоративное право', desc: 'Сопровождение бизнеса' },
-                                    { icon: '🏠', title: 'Недвижимость', desc: 'Сделки и споры' },
-                                    { icon: '👨‍👩‍👧', title: 'Семейное право', desc: 'Разводы, алименты, опека' }
-                                ].map((service, index) => (
-                                    <div key={index} className="flex items-start space-x-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                                        <span className="text-2xl">{service.icon}</span>
-                                        <div>
-                                            <h3 className="font-semibold text-gray-900 text-sm">{service.title}</h3>
-                                            <p className="text-xs text-gray-500">{service.desc}</p>
+                                
+                                {/* Featured service - Military Law */}
+                                <div className="mb-4">
+                                    <div className="flex items-center justify-center space-x-3 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl shadow-md border-2 border-blue-200 hover:shadow-lg transition-shadow">
+                                        <span className="text-4xl">🎖️</span>
+                                        <div className="flex-1">
+                                            <h3 className="font-bold text-gray-900 text-base">Военное право</h3>
+                                            <p className="text-xs text-gray-600 mb-2">Защита военнослужащих, мобилизованных и добровольцев</p>
+                                            <a 
+                                                href="https://t.me/kodex48" 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg transition-colors"
+                                            >
+                                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.141.121.099.155.232.171.326.016.093.036.305.02.469z"/>
+                                                </svg>
+                                                Telegram канал 
+                                            </a>
                                         </div>
                                     </div>
-                                ))}
-                            </div>
+                                </div>
 
-                            {/* CTA buttons */}
+                                <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                                    {[
+                                        { icon: '⚖️', title: 'Гражданские дела', desc: 'Защита в судах любой инстанции' },
+                                        { icon: '👮', title: 'Уголовное право', desc: 'Защита по уголовным делам' },
+                                        { icon: '🏠', title: 'Административное право', desc: 'Сделки и споры' },
+                                        { icon: '👨‍👩‍👧', title: 'Семейное право', desc: 'Разводы, алименты, опека' }
+                                    ].map((service, index) => (
+                                        <div key={index} className="flex items-start space-x-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                            <span className="text-2xl">{service.icon}</span>
+                                            <div>
+                                                <h3 className="font-semibold text-gray-900 text-sm">{service.title}</h3>
+                                                <p className="text-xs text-gray-500">{service.desc}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                                
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <a
-                                    href="tel:+74742200719"
+                                    href="tel:+79290123848"
                                     className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-colors shadow-lg shadow-blue-600/30"
                                 >
                                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -181,7 +193,7 @@ const Hero = () => {
                                     Позвонить сейчас
                                 </a>
                                 <a
-                                    href="https://wa.me/79272588921"
+                                    href="https://wa.me/79290123848"
                                     className="inline-flex items-center justify-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-colors"
                                 >
                                     <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -189,13 +201,24 @@ const Hero = () => {
                                     </svg>
                                     WhatsApp
                                 </a>
+                                <a
+                                    href="https://t.me/kodex_kvo"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center px-8 py-4 bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-xl transition-colors"
+                                >
+                                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.008-1.252-.241-1.865-.44-.752-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635.099-.002.321.023.465.141.121.099.155.232.171.326.016.093.036.305.02.469z"/>
+                                    </svg>
+                                    Telegram
+                                </a>
                             </div>
 
                             {/* Trust indicators */}
                             <div className="mt-8 pt-8 border-t border-gray-200">
                                 <div className="grid grid-cols-3 gap-6 text-center">
                                     <div>
-                                        <div className="text-3xl font-bold text-blue-600 mb-1">500+</div>
+                                        <div className="text-3xl font-bold text-blue-600 mb-1">300+</div>
                                         <div className="text-sm text-gray-600">выигранных дел</div>
                                     </div>
                                     <div>
