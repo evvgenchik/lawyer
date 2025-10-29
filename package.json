@@ -1,7 +1,6 @@
 {
   "name": "lawyer-website",
   "version": "0.1.0",
-  "homepage": "https://evvgenchik.github.io/lawyer",
   "private": true,
   "dependencies": {
     "@supabase/supabase-js": "^2.58.0",

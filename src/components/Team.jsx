@@ -29,7 +29,7 @@ const Team = () => {
                                         <div className="md:flex-shrink-0 flex justify-center items-center p-8 bg-gradient-to-br from-blue-50 to-indigo-50">
                                             <img
                                                 className="h-56 w-56 rounded-full object-fit border-4 border-white shadow-lg"
-                                                src={`${process.env.PUBLIC_URL}${member.image}`}
+                                                src={member.image}
                                                 alt={member.name}
                                             />
                                         </div>

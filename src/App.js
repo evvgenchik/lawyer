@@ -18,7 +18,7 @@ const ProtectedRoute = lazy(() => import('./admin/ProtectedRoute.jsx'));
 
 function App() {
     return (
-        <Router basename="/lawyer">
+        <Router>
             <div className="App">
                 <Routes>
                     {/* Public Routes */}
