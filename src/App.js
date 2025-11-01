@@ -5,9 +5,10 @@ import Header from './components/Header.jsx';
 import Hero from './components/Hero_new.jsx';
 import Services from './components/Services.jsx';
 import Stats from './components/Stats.jsx';
-import Team from './components/Team.jsx';
+// import Team from './components/Team.jsx';
 import FAQ from './components/FAQ.jsx';
 import ConsultationForm from './components/ConsultationForm.jsx';
+// import YandexMap from './components/YandexMap.jsx';
 import Footer from './components/Footer.jsx';
 
 const ChatWidget = lazy(() => import('./components/ChatWidget.jsx'));
@@ -27,9 +28,10 @@ function App() {
                             <Hero />
                             <Stats />
                             <Services />
-                            <Team />
+                            {/* <Team /> */}
                             <FAQ />
                             <ConsultationForm />
+                            {/* <YandexMap /> */}
                             <Footer />
 
                             <Suspense>
