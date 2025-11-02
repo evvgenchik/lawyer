@@ -1,0 +1,32 @@
+# robots.txt для kodex48.ru
+# Юридическая помощь в Липецке
+
+User-agent: *
+Allow: /
+Allow: /static/
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://kodex48.ru/sitemap.xml
+
+# Яндекс
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Crawl-delay: 2
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+# Запрет для плохих ботов
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
