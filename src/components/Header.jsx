@@ -44,7 +44,7 @@ const Header = () => {
                     <div className="flex items-center">
                         <div className="flex-shrink-0 flex items-center gap-1">
                             <img 
-                                src="/images/logo.jpg" 
+                                src="/images/logo.png" 
                                 alt="Кодекс Logo" 
                                 className="h-16 sm:h-20 lg:h-32 w-auto"
                             />

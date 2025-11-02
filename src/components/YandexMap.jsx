@@ -22,6 +22,7 @@ const YandexMap = () => {
                             title="Офис Кодекс48 в Липецке на карте"
                             className="w-full h-full"
                             loading="lazy"
+                            aria-label="Интерактивная карта с местоположением офиса Кодекс48 в Липецке"
                         ></iframe>
                     </div>
 
