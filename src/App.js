@@ -8,7 +8,7 @@ import Stats from './components/Stats.jsx';
 // import Team from './components/Team.jsx';
 import FAQ from './components/FAQ.jsx';
 import ConsultationForm from './components/ConsultationForm.jsx';
-// import YandexMap from './components/YandexMap.jsx';
+import YandexMap from './components/YandexMap.jsx';
 import Footer from './components/Footer.jsx';
 
 const ChatWidget = lazy(() => import('./components/ChatWidget.jsx'));
@@ -31,7 +31,7 @@ function App() {
                             {/* <Team /> */}
                             <FAQ />
                             <ConsultationForm />
-                            {/* <YandexMap /> */}
+                            <YandexMap />
                             <Footer />
 
                             <Suspense>
