@@ -11,7 +11,7 @@ const FAQ = lazy(() => import('./components/FAQ.jsx'));
 const ConsultationForm = lazy(() => import('./components/ConsultationForm.jsx'));
 const YandexMap = lazy(() => import('./components/YandexMap.jsx'));
 const Footer = lazy(() => import('./components/Footer.jsx'));
-const ChatWidget = lazy(() => import('./components/ChatWidget.jsx'));
+// const ChatWidget = lazy(() => import('./components/ChatWidget.jsx'));
 const AdminLogin = lazy(() => import('./admin/AdminLogin.jsx'));
 const AdminDashboard = lazy(() => import('./admin/AdminDashboard.jsx'));
 const ProtectedRoute = lazy(() => import('./admin/ProtectedRoute.jsx'));
@@ -41,7 +41,7 @@ function App() {
                                 <ConsultationForm />
                                 <YandexMap />
                                 <Footer />
-                                <ChatWidget />
+                                {/* <ChatWidget /> */}
                             </Suspense>
                         </>
                     } />
