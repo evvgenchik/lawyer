@@ -48,10 +48,10 @@ const Header = () => {
                                 alt="Кодекс Logo" 
                                 className="h-16 sm:h-20 lg:h-32 w-auto"
                             />
-                            <h1 className="text-2xl sm:text-6xl font-bold mb-4" 
+                            <h1 className="text-2xl sm:text-6xl font-bold" 
                                 style={{ 
-                                    fontFamily: '"Playfair Display", "Georgia", serif',
-                                    color: '#000000',
+                                    fontFamily: '"Cormorant Unicase", "Georgia", serif',
+                                    color: 'rgb(2 39 57 / var(--tw-bg-opacity))',
                                     WebkitTextStroke: '5px #ffffff',
                                     paintOrder: 'stroke fill'
                                 }}
