@@ -84,14 +84,6 @@ const Header = () => {
                                 +7 (929) 012-38-48
                             </a>
                             <a
-                                href="https://wa.me/79290123848"
-                                className="ml-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                WhatsApp
-                            </a>
-                            <a
                                 href="https://t.me/kodex_kvo"
                                 className="ml-2 bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300"
                                 target="_blank"
@@ -149,14 +141,6 @@ const Header = () => {
                                     </a>
                                 </div>
                                 <div className="mt-3 px-3 space-y-2">
-                                    <a
-                                        href="https://wa.me/79290123848"
-                                        className="bg-green-500 hover:bg-green-600 text-white block px-4 py-2 rounded-md text-sm font-medium text-center"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        WhatsApp
-                                    </a>
                                     <a
                                         href="https://t.me/kodex_kvo"
                                         className="bg-sky-500 hover:bg-sky-600 text-white block px-4 py-2 rounded-md text-sm font-medium text-center"
