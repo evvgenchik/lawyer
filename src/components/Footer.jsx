@@ -7,8 +7,8 @@ const Footer = () => {
                         <div className="flex items-center">
                             <h3 className="text-2xl sm:text-3xl lg:text-6xl font-extrabold text-white tracking-tight"
                                 style={{ 
-                                    fontFamily: '"Playfair Display", "Georgia", serif',
-                                    color: '#000000',
+                                    fontFamily: '"Cormorant Unicase", "Georgia", serif',
+                                    color: 'rgb(2 39 57 / var(--tw-bg-opacity))',
                                     WebkitTextStroke: '5px #ffffff',
                                     paintOrder: 'stroke fill'
                                 }}
