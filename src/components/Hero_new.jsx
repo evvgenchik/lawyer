@@ -151,7 +151,7 @@ const Hero = () => {
                                             <h3 className="font-bold text-gray-900 text-base">Военное право</h3>
                                             <p className="text-xs text-gray-600 mb-2">Защита военнослужащих, мобилизованных и добровольцев</p>
                                             <a 
-                                                href="https://t.me/kodex48" 
+                                                href="https://t.me/+H5zpMt9_ZukwOTEy" 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg transition-colors"
