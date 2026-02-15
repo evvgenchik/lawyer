@@ -94,8 +94,8 @@ const Footer = () => {
                 <div className="mt-6 sm:mt-8 border-t border-gray-700 pt-6 sm:pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <div className="text-gray-400 text-xs sm:text-sm text-center md:text-left">
-                            <p>ИП Дроворуб Андрей Юрьевич</p>
-                            <p>ИНН 480701284458 | ОГРНИП: 325480000054062</p>
+                            <p>ИП Коротеев Владислав Олегович</p>
+                            <p>ИНН 480707744630 | ОГРНИП: 326480000001925</p>
                         </div>
                     </div>
                 </div>
