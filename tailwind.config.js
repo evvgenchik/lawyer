@@ -34,6 +34,8 @@ module.exports = {
         'bounce-slow': 'bounce 2s infinite',
         'gradient-x': 'gradient-x 15s ease infinite',
         'float': 'float 6s ease-in-out infinite',
+        'carouselFromRight': 'carouselFromRight 0.65s ease-out',
+        'carouselFromLeft': 'carouselFromLeft 0.65s ease-out',
       },
       keyframes: {
         fadeIn: {
@@ -62,8 +64,16 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
         },
+        carouselFromRight: {
+          '0%': { opacity: '0', transform: 'translateX(80px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        carouselFromLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-80px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
 }

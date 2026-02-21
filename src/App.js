@@ -3,8 +3,9 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header.jsx';
 import Hero from './components/Hero_new.jsx';
-import Services from './components/Services.jsx';
 import Stats from './components/Stats.jsx';
+import Reviews from './components/Reviews.jsx';
+import Services from './components/Services.jsx';
 
 // Lazy load heavy components
 const FAQ = lazy(() => import('./components/FAQ.jsx'));
@@ -34,6 +35,7 @@ function App() {
                             <Header />
                             <Hero />
                             <Stats />
+                            <Reviews />
                             <Services />
                             
                             <Suspense fallback={<LoadingSpinner />}>
