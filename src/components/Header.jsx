@@ -33,8 +33,10 @@ const Header = () => {
     }, [isMenuOpen]);
 
     // Close mobile menu when link is clicked
-    const handleNavClick = () => {
+    const handleNavClick = (sectionId) => {
         setIsMenuOpen(false);
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (
@@ -63,18 +65,18 @@ const Header = () => {
 
                     <div className="hidden xl:block">
                         <div className="ml-4 flex items-baseline space-x-2">
-                            <a href="#consultation" className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-lg font-medium">
+                            <button onClick={() => handleNavClick('consultation')} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-lg font-medium">
                                 Консультация
-                            </a>
-                            <a href="#services" className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-lg font-medium">
+                            </button>
+                            <button onClick={() => handleNavClick('services')} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-lg font-medium">
                                 Услуги
-                            </a>
-                            <a href="#faq" className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-lg font-medium">
+                            </button>
+                            <button onClick={() => handleNavClick('faq')} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-lg font-medium">
                                 Вопросы
-                            </a>
-                            <a href="#contacts" className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-lg font-medium">
+                            </button>
+                            <button onClick={() => handleNavClick('contacts')} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-lg font-medium">
                                 Контакты
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -131,18 +133,18 @@ const Header = () => {
                 {isMenuOpen && (
                     <div className="xl:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <a href="#consultation" onClick={handleNavClick} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium block">
+                            <button onClick={() => handleNavClick('consultation')} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium block w-full text-left">
                                 Консультация
-                            </a>
-                            <a href="#services" onClick={handleNavClick} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium block">
+                            </button>
+                            <button onClick={() => handleNavClick('services')} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium block w-full text-left">
                                 Услуги
-                            </a>
-                            <a href="#faq" onClick={handleNavClick} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium block">
+                            </button>
+                            <button onClick={() => handleNavClick('faq')} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium block w-full text-left">
                                 Вопросы
-                            </a>
-                            <a href="#contacts" onClick={handleNavClick} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium block">
+                            </button>
+                            <button onClick={() => handleNavClick('contacts')} className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium block w-full text-left">
                                 Контакты
-                            </a>
+                            </button>
                             <div className="pt-4 pb-3 border-t border-white/20">
                                 <div className="flex items-center px-3">
                                     <a href="tel:+79290123848" className="text-white font-semibold text-lg">
