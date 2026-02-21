@@ -163,6 +163,15 @@ const ConsultationForm = () => {
                                                 >
                                                     Telegram
                                                 </a>
+                                                <a
+                                                    href="https://max.ru/u/f9LHodD0cOKcBw19oDA03n27PHhQ-3-l37vRpaCdykDZoOq23T0BDP0lQq0"
+                                                    className="inline-flex items-center justify-center px-3 py-2 bg-[#708FE9] text-white font-semibold rounded-lg text-sm border border-[#708FE9] hover:bg-[#9164DE] transition"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    <img src="/images/max.svg" alt="MAX" className="w-4 h-4 mr-2" />
+                                                    MAX
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

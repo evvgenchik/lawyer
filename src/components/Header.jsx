@@ -91,6 +91,15 @@ const Header = () => {
                             >
                                 Telegram
                             </a>
+                            <a
+                                href="https://max.ru/u/f9LHodD0cOKcBw19oDA03n27PHhQ-3-l37vRpaCdykDZoOq23T0BDP0lQq0"
+                                className="ml-2 bg-[#708FE9] hover:bg-[#9164DE] text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300 inline-flex items-center"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img src="/images/max.svg" alt="MAX" className="w-4 h-4 mr-2" />
+                                MAX
+                            </a>
                         </div>
                     </div>
 
@@ -148,6 +157,15 @@ const Header = () => {
                                         rel="noopener noreferrer"
                                     >
                                         Telegram
+                                    </a>
+                                    <a
+                                        href="https://max.ru/u/f9LHodD0cOKcBw19oDA03n27PHhQ-3-l37vRpaCdykDZoOq23T0BDP0lQq0"
+                                        className="bg-[#708FE9] hover:bg-[#9164DE] text-white w-full px-4 py-2 rounded-md text-sm font-medium text-center flex items-center justify-center mt-2"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <img src="/images/max.svg" alt="MAX" className="w-4 h-4 mr-2" />
+                                        MAX
                                     </a>
                                 </div>
                             </div>

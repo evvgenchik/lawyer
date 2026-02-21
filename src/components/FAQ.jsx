@@ -171,6 +171,15 @@ const FAQ = () => {
                                     </svg>
                                     Telegram
                                 </a>
+                                <a
+                                    href="https://max.ru/u/f9LHodD0cOKcBw19oDA03n27PHhQ-3-l37vRpaCdykDZoOq23T0BDP0lQq0"
+                                    className="inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 bg-[#708FE9] text-white font-semibold rounded-lg sm:rounded-xl hover:bg-[#9164DE] transition-colors duration-300 text-sm sm:text-base shadow-lg"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img src="/images/max.svg" alt="MAX" className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                                    MAX
+                                </a>
                             </div>
                         </div>
                     </div>
