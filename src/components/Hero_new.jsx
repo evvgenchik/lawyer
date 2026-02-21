@@ -152,7 +152,7 @@ const Hero = () => {
                                             <p className="text-xs text-gray-600 mb-2">Защита военнослужащих, мобилизованных и добровольцев</p>
                                             <div className="flex gap-2">
                                                 <a 
-                                                    href="https://t.me/+H5zpMt9_ZukwOTEy" 
+                                                    href="https://t.me/+4S3e7LVs7DUzYTRi" 
                                                     target="_blank" 
                                                     rel="noopener noreferrer"
                                                     className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-sky-500 hover:bg-sky-600 text-white text-sm font-semibold rounded-lg transition-colors"
@@ -163,7 +163,7 @@ const Hero = () => {
                                                     Telegram канал 
                                                 </a>
                                                 <a
-                                                    href="https://max.ru/u/f9LHodD0cOKcBw19oDA03n27PHhQ-3-l37vRpaCdykDZoOq23T0BDP0lQq0"
+                                                    href="https://max.ru/join/iUOcXSQI8O4Tb3w_gVJ4CO5Um6VbRjvppF99jpsznkg"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="inline-flex items-center justify-center gap-2 px-3 py-1 bg-[#708FE9] hover:bg-[#9164DE] text-white text-sm font-semibold rounded-lg transition-colors"
