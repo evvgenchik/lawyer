@@ -43,7 +43,7 @@ const YandexMap = () => {
                                     <div className="ml-3">
                                         <p className="text-sm font-medium text-gray-900">Адрес офиса</p>
                                         <p className="mt-1 text-sm text-gray-600">
-                                            г. Липецк, пл. Петра Великого, д. 5, офис 202
+                                            г. Липецк, ул. Фрунзе, д.43б, 1 этаж (4 помещение)
                                         </p>
                                         <p className="text-xs text-gray-500 mt-1">
                                             (вход через деловой центр, второй этаж)

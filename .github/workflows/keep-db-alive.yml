@@ -1,0 +1,34 @@
+name: Keep Supabase DB Alive
+
+on:
+  schedule:
+    # Запуск каждые 5 дней в 10:00 UTC (13:00 MSK)
+    - cron: '0 10 */5 * *'
+  workflow_dispatch: # Позволяет запускать вручную
+
+jobs:
+  ping-database:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install @supabase/supabase-js
+
+      - name: Run database ping script
+        env:
+          SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.REACT_APP_SUPABASE_ANON_KEY }}
+        run: node .github/scripts/keep-db-alive.js
+
+      - name: Report status
+        if: always()
+        run: |
+          echo "Database ping completed at $(date)"
