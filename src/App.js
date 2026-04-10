@@ -13,6 +13,7 @@ const ConsultationForm = lazy(() => import('./components/ConsultationForm.jsx'))
 const YandexMap = lazy(() => import('./components/YandexMap.jsx'));
 const Footer = lazy(() => import('./components/Footer.jsx'));
 // const ChatWidget = lazy(() => import('./components/ChatWidget.jsx'));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy.jsx'));
 const AdminLogin = lazy(() => import('./admin/AdminLogin.jsx'));
 const AdminDashboard = lazy(() => import('./admin/AdminDashboard.jsx'));
 const ProtectedRoute = lazy(() => import('./admin/ProtectedRoute.jsx'));
@@ -46,6 +47,12 @@ function App() {
                                 {/* <ChatWidget /> */}
                             </Suspense>
                         </>
+                    } />
+
+                    <Route path="/privacy-policy" element={
+                        <Suspense fallback={<LoadingSpinner />}>
+                            <PrivacyPolicy />
+                        </Suspense>
                     } />
 
                     {/* Admin Routes */}

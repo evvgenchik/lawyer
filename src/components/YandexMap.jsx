@@ -15,7 +15,7 @@ const YandexMap = () => {
                     {/* Map */}
                     <div className="bg-white rounded-xl shadow-lg overflow-hidden h-[500px]">
                         <iframe
-                            src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=112470618732"
+                            src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=202420305965"
                             width="100%"
                             height="500"
                             frameBorder="0"
@@ -43,10 +43,7 @@ const YandexMap = () => {
                                     <div className="ml-3">
                                         <p className="text-sm font-medium text-gray-900">Адрес офиса</p>
                                         <p className="mt-1 text-sm text-gray-600">
-                                            г. Липецк, ул. Фрунзе, д.43б, 1 этаж (4 помещение)
-                                        </p>
-                                        <p className="text-xs text-gray-500 mt-1">
-                                            (вход через деловой центр, второй этаж)
+                                            г. Липецк, ул. Фрунзе, д.43, 1 этаж (4 помещение)
                                         </p>
                                     </div>
                                 </div>
