@@ -88,10 +88,13 @@ const YandexMap = () => {
                                     <div className="ml-3">
                                         <p className="text-sm font-medium text-gray-900">Режим работы</p>
                                         <p className="mt-1 text-sm text-gray-600">
-                                            ПН-ПТ: 9:00-21:00
+                                            ПН-ПТ: 9:00-19:00
                                         </p>
                                         <p className="text-sm text-gray-600">
-                                            СБ-ВС: 9:00-18:00
+                                            СБ: 9:00-14:00
+                                        </p>
+                                        <p className="text-sm text-gray-600">
+                                            ВС - выходной
                                         </p>
                                     </div>
                                 </div>
